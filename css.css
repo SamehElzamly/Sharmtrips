@@ -324,7 +324,7 @@ header .text:hover::after {
     content: "one click to stop background animation";
     background-color: var(--colorSt--);
     color: var(--colornd--);
-    width: 200px;
+    width: 230px;
     height: 16px;
     font-size: 10px;
     position: absolute;
