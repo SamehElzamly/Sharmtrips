@@ -86,9 +86,6 @@
     #About img {
         display: none
     }
-    #About>div {
-        height: 300px
-    }
     .show div {
         min-width: 156px;
         font-size: 14px;
@@ -327,7 +324,7 @@ header .text:hover::after {
     content: "one click to stop background animation";
     background-color: var(--colorSt--);
     color: var(--colornd--);
-    width: 180px;
+    width: 200px;
     height: 16px;
     font-size: 10px;
     position: absolute;
