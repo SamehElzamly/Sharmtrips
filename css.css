@@ -1,0 +1,608 @@
+/* dynamic calss */
+
+.apper {
+    transform: translate(-50%, -50%) scale(1)!important
+}
+
+
+/* animations */
+
+@keyframes text {
+    0% {
+        top: 100%;
+        left: -100%;
+    }
+    10% {
+        top: 50%;
+        left: 50%;
+    }
+    40% {
+        top: 50%;
+        left: 50%;
+    }
+    90% {
+        top: 50%;
+        left: 50%;
+    }
+    100% {
+        top: 100%;
+        left: -100%;
+    }
+}
+
+@keyframes button {
+    0% {
+        opacity: 0.9;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* media queries */
+
+@media (max-width:556px) {
+    .head div div {
+        width: 100%;
+    }
+    header div div i {
+        font-size: 30px
+    }
+    header .text {
+        width: 100%;
+        padding: 10px
+    }
+    .text p {
+        font-size: 17px;
+        line-height: 1.2;
+        padding: 10px 0
+    }
+    #Trips i {
+        padding: 10px;
+    }
+    #Trips i:first-child {
+        left: -26px
+    }
+    #Trips i:last-child {
+        right: -26px
+    }
+    .trips {
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+    .trips>div {
+        flex-direction: column;
+        height: 500px;
+        justify-content: space-between;
+        padding: 0 10px;
+    }
+    .trips img {
+        width: 224px;
+        height: 168px
+    }
+    #About img {
+        display: none
+    }
+    #About>div {
+        height: 300px
+    }
+    .show div {
+        min-width: 156px;
+        font-size: 14px;
+    }
+    #Contact>div {
+        flex-direction: column;
+    }
+    hr {
+        display: none
+    }
+    #Contact .contact {
+        margin-bottom: 10px;
+    }
+}
+
+@media (min-width:557px) {
+    .head div div {
+        width: 230px;
+    }
+    header div div i {
+        font-size: 40px
+    }
+    header .text {
+        width: 80%;
+        padding: 20px
+    }
+    .text p {
+        font-size: 20px;
+        padding: 20px 0
+    }
+    #Trips i {
+        padding: 20px
+    }
+    #Trips i:first-child {
+        left: -54px
+    }
+    #Trips i:last-child {
+        right: -54px
+    }
+    .trips {
+        font-size: 0.9em;
+        font-weight: normal;
+    }
+    .trips>div {
+        height: 250px;
+    }
+    .trips img {
+        width: 224px;
+        height: 168px
+    }
+    .show div {
+        min-width: 200px
+    }
+    #About img {
+        width: 300px;
+    }
+}
+
+@media (min-width:767px) {
+    #Trips i:first-child {
+        left: -70px
+    }
+    #Trips i:last-child {
+        right: -70px
+    }
+    .trips {
+        font-size: 1em;
+    }
+    .trips img {
+        width: 300px;
+        height: 100%;
+    }
+    #About img {
+        width: 400px;
+    }
+    .show div {
+        min-width: 260px
+    }
+}
+
+
+/* glopal styles */
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --colorSt--: #ffffff;
+    --colornd--: #022b3a;
+    --colorrd--: #e1e5f2;
+    --colorth--: #1f7a8c;
+    --color--: #bfdbf7
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 10%
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--colorSt--)
+}
+
+i {
+    font-size: 20px;
+}
+
+h1 {
+    color: var(--colorSt--);
+    text-align: center;
+}
+
+section h1 {
+    color: var(--colornd--);
+    font-size: 40px;
+    margin: 130px auto;
+}
+
+h1 span {
+    padding-left: 30px
+}
+
+h2 {
+    padding-bottom: 15px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: aliceblue;
+    left: 0
+}
+
+li {
+    list-style: none
+}
+
+button {
+    color: var(--colorrd--);
+    margin-top: 5px;
+    padding: 6px;
+    font-weight: bold;
+    background-color: var(--colornd--);
+    border-color: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+/* header styles */
+
+header {
+    height: 100vh;
+    background-image: url(image/0.jpg);
+    background-size: cover;
+}
+
+header i {
+    color: var(--colorSt--);
+    font-size: 20px;
+}
+
+.head {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.head div div {
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: -100%;
+    background-color: var(--colorth--);
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0 0 0;
+    transition: 1s;
+}
+
+header a {
+    padding: 20px;
+    text-decoration: none;
+    color: var(--colorSt--);
+    font-size: 17px
+}
+
+header a:hover {
+    background-color: var(--colorrd--);
+    color: var(--colornd--);
+}
+
+header div div i {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 11;
+    cursor: pointer;
+}
+
+header .fa-x {
+    display: none;
+}
+
+header .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: text 10s infinite;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #204f58b3;
+}
+
+header .text:hover::after {
+    content: "one click to stop background animation";
+    background-color: var(--colorSt--);
+    color: var(--colornd--);
+    width: 180px;
+    height: 16px;
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    top: -16px
+}
+
+header .text:hover::before {
+    content: "double click to resume it";
+    background-color: var(--colorSt--);
+    color: var(--colornd--);
+    width: 180px;
+    height: 16px;
+    font-size: 10px;
+    position: absolute;
+    top: 100%;
+    right: 0
+}
+
+.text p {
+    color: var(--colorSt--);
+}
+
+#Trips>div {
+    position: relative;
+}
+
+.show {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 40px
+}
+
+.show>div {
+    height: 250px;
+    opacity: 0.5
+}
+
+.show>div div {
+    display: none;
+}
+
+.show>div:nth-child(2) {
+    transform: scale(1.2);
+    opacity: 1
+}
+
+.show>div:nth-child(2) div {
+    display: block
+}
+
+.show div div {
+    position: absolute;
+    bottom: 0;
+    padding: 2px 15px;
+    color: var(--colornd--);
+    background-color: var(--colorrd--);
+    opacity: 0;
+    transition: 1s;
+    font-weight: bold;
+    text-shadow: 0 0 2px var(--colorSt--);
+}
+
+.show>div:nth-child(2):hover div {
+    opacity: 1
+}
+
+.show img {
+    width: 100%
+}
+
+#Trips i {
+    cursor: pointer;
+    font-size: 30px;
+    color: var(--colornd--);
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: calc(50% - 35px)
+}
+
+#Trips i:hover {
+    background-color: var(--colornd--);
+    color: var(--colorSt--);
+}
+
+#Trips i:first-child {
+    z-index: 2;
+}
+
+#Trips i:last-child {
+    justify-content: flex-end;
+}
+
+#Trips>button {
+    width: 100px;
+    height: 50px;
+    font-size: 16px;
+    margin-left: calc(50% - 50px);
+    margin-top: 50px;
+    animation: infinite 2s button alternate-reverse
+}
+
+
+/* all trips */
+
+#fullTrips {
+    background-color: var(--colorth--);
+    color: var(--colorrd--);
+    font-weight: bold;
+}
+
+#fullTrips h2::after {
+    content: none
+}
+
+#fullTrips button {
+    width: 100px;
+    height: 50px;
+    margin: 23px;
+    font-size: 17px;
+    position: relative;
+    animation: infinite 1.5s button alternate-reverse;
+}
+
+#fullTrips button::before {
+    content: '';
+    position: absolute;
+    left: -48px;
+    border: 23px solid var(--colornd--);
+    border-color: transparent var(--colornd--) transparent transparent;
+    top: 0;
+}
+
+.trips {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px 0;
+    line-height: 1.5;
+}
+
+.trips>div {
+    display: flex;
+}
+
+.trips img {
+    margin: 0 5%;
+    box-shadow: 0 0 8px black
+}
+
+.trips ul li {
+    list-style: disc;
+}
+
+
+/* About us */
+
+#About>div {
+    background-color: var(--colornd--);
+    display: flex;
+    justify-content: space-evenly
+}
+
+#About img {
+    position: relative;
+    transition: 1s;
+    left: -100%
+}
+
+#About div div {
+    color: white;
+    width: 200px;
+    line-height: 1.4;
+    padding-top: 20px;
+    transition: 1s;
+    opacity: 0
+}
+
+
+/* contact us */
+
+#Contact>div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+    color: var(--colornd--);
+    align-items: center
+}
+
+#Contact .contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-around;
+    height: 140px;
+    font-size: 18px;
+}
+
+#Contact .contact div {
+    display: flex;
+}
+
+#Contact .contact div i {
+    padding-right: 20px;
+}
+
+#Contact hr {
+    height: 100%;
+    position: absolute;
+    left: calc(50% - 26px);
+}
+
+#Contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+}
+
+form input {
+    height: 45px;
+    border-color: transparent transparent transparent var(--colornd--);
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: 1s;
+    width: 100%
+}
+
+form input:last-child {
+    background-color: var(--colornd--);
+    color: var(--colorSt--);
+    margin-top: 20px;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+}
+
+
+/* contact developer */
+
+.foot {
+    background-color: var(--colornd--);
+    color: var(--colorth--);
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.foot ul {
+    padding: 0;
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+}
+
+.foot h2 span {
+    color: var(--colorSt--);
+    font-size: 25px;
+}
+
+.foot a:hover i {
+    color: var(--colorth--);
+    transform: scale(1.2);
+}
